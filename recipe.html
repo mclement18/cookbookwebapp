@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Recipe</title>
+</head>
+<body>
+  <header>
+    <h1>$$$RECIPETITLE$$$</h1>
+  </header>
+  <div>
+    <input type="text" id="person_nb" placeholder="Number of people">
+    <input type="button" value="Calculate" id="calculate">
+    <h3>Ingredients:</h3>
+    <ul>
+      $$$INGREDIENTS$$$
+    </ul>
+  </div>
+  <div>
+    <h3>Description:</h3>
+    <textarea name="recipe_description" id="recipe_description" cols="30" rows="10">$$$DESCRIPTION$$$</textarea>
+  </div>
+  <form action="/delete" method="post">
+    <input type="text" name="recipe_title" id="recipe_title" hidden>  
+    <input type="text" name="username" id="username" hidden>
+    <input type="submit" value="Delete Recipe" class="button">
+  </form>
+  <footer>
+  </footer>
+</body>
+</html>

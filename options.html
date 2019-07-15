@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Recipe Book</title>
+</head>
+<body>
+  <header>
+    <h1>username Cookbook</h1>
+  </header>
+  <div>
+    <form action="/add" method="get">
+      <input type="submit" value="Add a new Recipe" class="button">
+    </form>
+  </div>
+  <div>
+    <form action="/search" method="get">
+      <input type="text" name="query" id="query" placeholder="Your Search">
+      <input type="text" name="username" class="username" hidden>
+      <input type="submit" value="Search" class="button">
+    </form>
+  </div>
+  <div>
+    <form action="/allrecipes" method="get">
+      <input type="text" name="username" class="username" hidden>
+      <input type="submit" value="See all Recipes" class="button" id="see_all">  
+    </form>
+    <form action="/clear" method="get">
+      <input type="text" name="username" class="username" hidden>
+      <input type="submit" value="Clear all" class="button" id="clear">  
+    </form>
+  </div>
+  <footer>
+    <p>Info: $$$INFO$$$</p>
+  </footer>
+</body>
+</html>

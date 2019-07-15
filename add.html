@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add a Recipe</title>
+</head>
+<body>
+  <header>
+    <h1>Enter your new Recipe</h1>
+  </header>
+  <form action="/add" method="POST">
+    <input type="text" name="recipe_title" id="recipe_title" placeholder="Recipe title">
+    <div>
+      <div>
+        <p class="ingredient">
+          <input type="text" name="quantity_0" id="quantity_0" placeholder="Quantity">
+          <input type="text" name="unit_0" id="unit_0" placeholder="Unit">
+          <input type="text" name="ingredient_0" id="ingredient_0" placeholder="Ingredient">
+        </p>
+      </div>
+      <input type="button" name="add_ingredient" value="Add Ingredient" class="button" id="add_ingredient">
+    </div>
+    <div>
+      <textarea name="recipe_description" id="recipe_description" cols="30" rows="10" placeholder="Recipe description"></textarea>
+    </div>
+    <input type="submit" name="add_recipe" value="Add Recipe" class="button">
+    <input type="text" name="username" id="username" hidden>
+  </form>
+  <footer>
+    <p>Info: $$$INFO$$$</p>
+  </footer>
+</body>
+</html>
