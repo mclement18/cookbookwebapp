@@ -6,8 +6,13 @@
 </head>
 <body>
   <header>
-    <h1>$$$RECIPETITLE$$$</h1>
+    <h1 id="recipeTitle">$$$RECIPETITLE$$$</h1>
   </header>
+  <nav>
+    <a href="/">Exit CookBook</a>
+    <a href="/options?username=USER" id="linkToUserCookBook">Back to CookBook</a>
+    <a href="" id="linkToRecipeList">Back to WHAT</a>
+  </nav>
   <div>
     <input type="text" id="person_nb" placeholder="Number of people">
     <input type="button" value="Calculate" id="calculate">
@@ -18,7 +23,7 @@
   </div>
   <div>
     <h3>Description:</h3>
-    <textarea name="recipe_description" id="recipe_description" cols="30" rows="10">$$$DESCRIPTION$$$</textarea>
+    <textarea name="recipe_description" id="recipe_description" cols="30" rows="10" readonly>$$$DESCRIPTION$$$</textarea>
   </div>
   <form action="/delete" method="post">
     <input type="text" name="recipe_title" id="recipe_title" hidden>  
@@ -27,5 +32,6 @@
   </form>
   <footer>
   </footer>
+  <script src="static/recipe.js"></script>
 </body>
 </html>

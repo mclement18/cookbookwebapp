@@ -8,20 +8,25 @@
   <header>
     <h1>Enter your new Recipe</h1>
   </header>
+  <nav>
+    <a href="/">Exit CookBook</a>
+    <a href="/options?username=USER" id="linkToUserCookBook">Back to CookBook</a>
+  </nav>
   <form action="/add" method="POST">
-    <input type="text" name="recipe_title" id="recipe_title" placeholder="Recipe title">
+    <input type="text" name="recipe_title" id="recipe_title" placeholder="Recipe title" required>
     <div>
-      <div>
-        <p class="ingredient">
-          <input type="text" name="quantity_0" id="quantity_0" placeholder="Quantity">
+      <p>Input quantities for 4 people.</p>
+      <div id="ingredientsInputList">
+        <p class="ingredient" id="ingredient_0">
+          <input type="text" name="quantity_0" id="quantity_0" placeholder="Quantity" required>
           <input type="text" name="unit_0" id="unit_0" placeholder="Unit">
-          <input type="text" name="ingredient_0" id="ingredient_0" placeholder="Ingredient">
+          <input type="text" name="ingredient_0" id="ingredient_name_0" placeholder="Ingredient" required>
         </p>
       </div>
-      <input type="button" name="add_ingredient" value="Add Ingredient" class="button" id="add_ingredient">
+      <input type="button" name="add_ingredient" value="Add Ingredient" class="button" id="addIngredient">
     </div>
     <div>
-      <textarea name="recipe_description" id="recipe_description" cols="30" rows="10" placeholder="Recipe description"></textarea>
+      <textarea name="recipe_description" id="recipe_description" cols="30" rows="10" placeholder="Recipe description" required></textarea>
     </div>
     <input type="submit" name="add_recipe" value="Add Recipe" class="button">
     <input type="text" name="username" id="username" hidden>
@@ -29,5 +34,6 @@
   <footer>
     <p>Info: $$$INFO$$$</p>
   </footer>
+  <script src="static/add.js"></script>
 </body>
 </html>

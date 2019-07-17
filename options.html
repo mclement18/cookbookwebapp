@@ -6,8 +6,11 @@
 </head>
 <body>
   <header>
-    <h1>username Cookbook</h1>
+    <h1 id="mainTitle">username Cookbook</h1>
   </header>
+  <nav>
+    <a href="/">Exit CookBook</a>
+  </nav>
   <div>
     <form action="/add" method="get">
       <input type="submit" value="Add a new Recipe" class="button">
@@ -15,9 +18,9 @@
   </div>
   <div>
     <form action="/search" method="get">
-      <input type="text" name="query" id="query" placeholder="Your Search">
+      <input type="text" name="query" id="query" placeholder="Your Search" required>
       <input type="text" name="username" class="username" hidden>
-      <input type="submit" value="Search" class="button">
+      <input type="submit" value="Search" class="button" id="search">
     </form>
   </div>
   <div>
@@ -33,5 +36,6 @@
   <footer>
     <p>Info: $$$INFO$$$</p>
   </footer>
+  <script src="static/options.js"></script>
 </body>
 </html>

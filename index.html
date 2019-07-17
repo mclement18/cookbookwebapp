@@ -12,12 +12,12 @@
     <h2>Insert your name</h2>
     <form action="/options" method="get">
       <input type="text" name="username" id="username" placeholder="Your Name" required>
-      <input type="submit" value="Enter" class="button">
+      <input type="submit" value="Enter" class="button" id="submitUser">
     </form>
   </div>
   <div>
     <h2>Or open your book, if you already have one</h2>
-    <ul>
+    <ul id="usersLink">
       <li>No user saved</li>
     </ul>
   </div>
@@ -25,5 +25,6 @@
     <p>INFO: $$$INFO$$$</p>
     <p id="users" hidden>$$$USERS$$$</p>
   </footer>
+  <script src="static/index.js"></script>
 </body>
 </html>

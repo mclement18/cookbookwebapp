@@ -22,7 +22,7 @@ class Recipe:
         # ingredients
         ingredients_html = ""
         for ingredient in self.ingredients:
-            ingredients_html += '<li><span class="quantity">{}</span> {}: {}</li>\n      '.format(ingredient.quantity, ingredient.unit, ingredient.ingredient)
+            ingredients_html += '<li><span class="quantity_calculation">{}</span> {}: {}</li>\n      '.format(ingredient.quantity, ingredient.unit, ingredient.ingredient)
         return self.title, ingredients_html, self.description
 
 class Database:
@@ -112,7 +112,7 @@ def get_user(method):
 def recipe_titles_list_to_html(recipe_titles):
     titles_html = ""
     for title in recipe_titles:
-        titles_html += '<form action="/recipe" method="get" class="title_form"><h3 class="recipe_title">{}</h3><input type="text" name="recipe_title" value="{}" hidden></form>\n      '.format(title, title)
+        titles_html += '<form action="/recipe" method="get" class="title_form"><h3 class="recipe_title">{}</h3><input type="text" name="recipe_title" value="{}" hidden><input type="text" name="username" hidden></form>\n      '.format(title, title)
     return titles_html
 
 def list_users_saved():
@@ -133,7 +133,7 @@ def missing_database_handler():
 def login():
     html_page = get_html("index")
     users = list_users_saved()
-    return html_page.replace('$$$INFO$$$', '').replace('$$$USERS$$$', users)
+    return html_page.replace('$$$INFO$$$', 'Nothing new!').replace('$$$USERS$$$', users)
 
 @app.route("/options")
 def options():
@@ -182,7 +182,6 @@ def add():
         message = "Ready to add some new recipes!"
     return html_page.replace('$$$INFO$$$', message)
 
-# @app.route("/allrecipes", methods=['POST'])
 @app.route("/allrecipes")
 def allrecipes():
     html_page = get_html("recipelist")
@@ -222,25 +221,23 @@ def recipe():
     else:
         return missing_database_handler()
 
-#@app.route("/delete", methods=['POST'])
-@app.route("/delete")
+@app.route("/delete", methods=['POST'])
 def delete():
     html_page = get_html("options")
     user_db = Database(get_user(flask.request.method))
     if user_db.check("exists"):
-        #message = user_db.delete(flask.request.form["recipe_title"])
-        message = user_db.delete(flask.request.args.get("recipe_title"))
+        message = user_db.delete(flask.request.form["recipe_title"])
         return html_page.replace('$$$INFO$$$', message)
     else:
         return missing_database_handler()
 
-#@app.route("/clear", methods=['POST'])
 @app.route("/clear")
 def clear():
     html_page = get_html("index")
     user_db = Database(get_user(flask.request.method))
     if user_db.check("exists"):
         user_db.clear()
-        return html_page.replace('$$$INFO$$$', 'CookBook deleted!')
+        users = list_users_saved()
+        return html_page.replace('$$$INFO$$$', 'CookBook deleted!').replace('$$$USERS$$$', users)
     else:
         return missing_database_handler()
