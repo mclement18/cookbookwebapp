@@ -3,26 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <title>Login</title>
+  <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
   <header>
     <h1>Welcome to the CookBook Web App</h1>
   </header>
-  <div>
-    <h2>Insert your name</h2>
-    <form action="/options" method="get">
-      <input type="text" name="username" id="username" placeholder="Your Name" required>
-      <input type="submit" value="Enter" class="button" id="submitUser">
-    </form>
-  </div>
-  <div>
-    <h2>Or open your book, if you already have one</h2>
-    <ul id="usersLink">
-      <li>No user saved</li>
-    </ul>
+  <div class="inline-elements">
+    <div>
+      <h2>Insert your name</h2>
+      <form action="/options" method="get">
+        <input type="text" name="username" id="username" placeholder="Your Name" required><input type="submit" value="Enter" class="button" id="submitUser">
+      </form>
+    </div>
+    <div>
+      <h2>Or open your book, if you already have one</h2>
+      <ul id="usersLink">
+        <li id="no_user">No user saved</li>
+      </ul>
+    </div>
   </div>
   <footer>
-    <p>INFO: $$$INFO$$$</p>
+    <p>Info: $$$INFO$$$</p>
     <p id="users" hidden>$$$USERS$$$</p>
   </footer>
   <script src="static/index.js"></script>

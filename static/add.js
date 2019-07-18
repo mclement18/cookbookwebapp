@@ -37,7 +37,7 @@ function createRemoveIngredientButton(number, parent) {
   const removeButton = document.createElement("input");
   removeButton.type = "button";
   removeButton.value = "Remove";
-  removeButton.className = "button";
+  removeButton.classList.add("button", "removeButton");
   removeButton.id = `removeIngredient_${number.toString()}`;
   removeButton.addEventListener("click", function() {
     ingredientsInputList.removeChild(parent);

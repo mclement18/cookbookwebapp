@@ -3,33 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <title>Add a Recipe</title>
+  <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
   <header>
     <h1>Enter your new Recipe</h1>
   </header>
   <nav>
-    <a href="/">Exit CookBook</a>
-    <a href="/options?username=USER" id="linkToUserCookBook">Back to CookBook</a>
+    <a href="/">Exit CookBook</a><a href="/options?username=USER" id="linkToUserCookBook">Back to CookBook</a>
   </nav>
   <form action="/add" method="POST">
-    <input type="text" name="recipe_title" id="recipe_title" placeholder="Recipe title" required>
+    <div>
+      <input type="text" name="recipe_title" id="recipe_title" placeholder="Recipe title" required>
+    </div>
     <div>
       <p>Input quantities for 4 people.</p>
       <div id="ingredientsInputList">
         <p class="ingredient" id="ingredient_0">
-          <input type="text" name="quantity_0" id="quantity_0" placeholder="Quantity" required>
-          <input type="text" name="unit_0" id="unit_0" placeholder="Unit">
-          <input type="text" name="ingredient_0" id="ingredient_name_0" placeholder="Ingredient" required>
+          <input type="text" name="quantity_0" id="quantity_0" placeholder="Quantity" required><input type="text" name="unit_0" id="unit_0" placeholder="Unit"><input type="text" name="ingredient_0" id="ingredient_name_0" placeholder="Ingredient" required>
         </p>
       </div>
       <input type="button" name="add_ingredient" value="Add Ingredient" class="button" id="addIngredient">
     </div>
     <div>
-      <textarea name="recipe_description" id="recipe_description" cols="30" rows="10" placeholder="Recipe description" required></textarea>
+      <textarea name="recipe_description" id="recipe_description" cols="100" rows="15" placeholder="Recipe description" required></textarea>
     </div>
-    <input type="submit" name="add_recipe" value="Add Recipe" class="button">
-    <input type="text" name="username" id="username" hidden>
+    <div>
+      <input type="submit" name="add_recipe" value="Add Recipe" class="button" id="add">
+      <input type="text" name="username" id="username" hidden>
+    </div>
   </form>
   <footer>
     <p>Info: $$$INFO$$$</p>

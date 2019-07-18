@@ -2,11 +2,13 @@ const actualUserName = localStorage.getItem("actualUser");
 const recipeTitles = document.getElementsByClassName("title_form");
 const userSearch = document.getElementById("userSearch");
 const linkToUserCooBook = document.getElementById("linkToUserCookBook");
+const pageTitle = document.getElementById("pageTitle");
 
 linkToUserCooBook.href = linkToUserCooBook.href.replace("USER", actualUserName);
 
 if (localStorage.getItem("search") != undefined) {
-  userSearch.innerText = `Your search: ${localStorage.getItem("search")}`;
+  userSearch.innerHTML = `Your search: <span id="search_display">${localStorage.getItem("search")}</span>`;
+  pageTitle.innerText = "Search results";
 } else {
   userSearch.parentElement.removeChild(userSearch);
 }

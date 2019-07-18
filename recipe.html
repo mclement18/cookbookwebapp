@@ -3,19 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <title>Recipe</title>
+  <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
   <header>
     <h1 id="recipeTitle">$$$RECIPETITLE$$$</h1>
   </header>
   <nav>
-    <a href="/">Exit CookBook</a>
-    <a href="/options?username=USER" id="linkToUserCookBook">Back to CookBook</a>
-    <a href="" id="linkToRecipeList">Back to WHAT</a>
+    <a href="/">Exit CookBook</a><a href="/options?username=USER" id="linkToUserCookBook">Back to CookBook</a><a href="" id="linkToRecipeList">Back to WHAT</a>
   </nav>
   <div>
-    <input type="text" id="person_nb" placeholder="Number of people">
-    <input type="button" value="Calculate" id="calculate">
+    <input type="text" id="person_nb" placeholder="Number of people"><input type="button" value="Calculate" class="button" id="calculate">
     <h3>Ingredients:</h3>
     <ul>
       $$$INGREDIENTS$$$
@@ -23,13 +21,15 @@
   </div>
   <div>
     <h3>Description:</h3>
-    <textarea name="recipe_description" id="recipe_description" cols="30" rows="10" readonly>$$$DESCRIPTION$$$</textarea>
+    <textarea name="recipe_description" id="recipe_description" cols="80" rows="15" readonly>$$$DESCRIPTION$$$</textarea>
   </div>
-  <form action="/delete" method="post">
-    <input type="text" name="recipe_title" id="recipe_title" hidden>  
-    <input type="text" name="username" id="username" hidden>
-    <input type="submit" value="Delete Recipe" class="button">
-  </form>
+  <div>
+    <form action="/delete" method="post">
+      <input type="text" name="recipe_title" id="recipe_title" hidden>  
+      <input type="text" name="username" id="username" hidden>
+      <input type="submit" value="Delete Recipe" class="button" id="deleteRecipe">
+    </form>
+  </div>
   <footer>
   </footer>
   <script src="static/recipe.js"></script>

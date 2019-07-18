@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>My Recipe Book</title>
+  <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
   <header>
@@ -11,27 +12,29 @@
   <nav>
     <a href="/">Exit CookBook</a>
   </nav>
-  <div>
-    <form action="/add" method="get">
-      <input type="submit" value="Add a new Recipe" class="button">
-    </form>
-  </div>
-  <div>
-    <form action="/search" method="get">
-      <input type="text" name="query" id="query" placeholder="Your Search" required>
-      <input type="text" name="username" class="username" hidden>
-      <input type="submit" value="Search" class="button" id="search">
-    </form>
-  </div>
-  <div>
-    <form action="/allrecipes" method="get">
-      <input type="text" name="username" class="username" hidden>
-      <input type="submit" value="See all Recipes" class="button" id="see_all">  
-    </form>
-    <form action="/clear" method="get">
-      <input type="text" name="username" class="username" hidden>
-      <input type="submit" value="Clear all" class="button" id="clear">  
-    </form>
+  <div class="inline-elements">
+    <div>
+      <form action="/add" method="get">
+        <input type="submit" value="Add a new Recipe" class="button" id="add">
+      </form>
+    </div>
+    <div>
+      <form action="/search" method="get">
+        <input type="text" name="query" id="query" placeholder="Your Search" required><input type="text" name="username" class="username" hidden><input type="submit" value="Search" class="button" id="search">
+      </form>
+    </div>
+    <div>
+      <form action="/allrecipes" method="get">
+        <input type="text" name="username" class="username" hidden>
+        <input type="submit" value="See all Recipes" class="button" id="see_all">  
+      </form>
+    </div>
+    <div>
+      <form action="/clear" method="get">
+        <input type="text" name="username" class="username" hidden>
+        <input type="submit" value="Delete CookBook" class="button" id="clear">  
+      </form>
+    </div>
   </div>
   <footer>
     <p>Info: $$$INFO$$$</p>
