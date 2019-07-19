@@ -64,6 +64,9 @@ textarea {
 .users-list-style {
   text-align: left;
   cursor: pointer;
+  width: intrinsic;           /* Safari/WebKit utilisent un nom non-standard */
+  width: -moz-max-content;    /* Firefox/Gecko */
+  width: -webkit-max-content; /* Chrome */
 }
 
 .users-list-style:hover {
@@ -75,9 +78,9 @@ textarea {
   cursor: pointer;
   padding: 10px 5px;
   margin: 5px 0;
-  width: -moz-max-content;
-  width: intrinsic;
-  width: -webkit-max-content;
+  width: intrinsic;           /* Safari/WebKit utilisent un nom non-standard */
+  width: -moz-max-content;    /* Firefox/Gecko */
+  width: -webkit-max-content; /* Chrome */
 }
 
 .recipe_title:hover {
